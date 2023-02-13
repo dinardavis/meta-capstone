@@ -1,38 +1,299 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;600;700;800&family=Markazi+Text:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: 'Karla', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+#root {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-color: #495E57;
+  padding: 0 10rem;
+  width: 100vw;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  margin-bottom: 3rem;
+}
+
+main {
+  flex: 1;
+ }
+
+section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5rem;
+}
+
+h1 {
+  font-size: 4rem;
+  font-family: 'Markazi Text', serif;
+  color: #F4CE14;
+}
+
+p {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(250, 235, 215), rgba(0, 0, 0, 0));
+}
+
+.box-shadow {
+  box-shadow: 5px 5px 5px rgba(40, 40, 40, 0.5);
+}
+
+/* Header Styles */
+
+header img {
+  width: auto;
+  height: 6rem;
+  cursor: pointer;
+}
+
+header ul {
+  display: flex;
+}
+
+header ul li {
+  margin: .7rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+header a {
+  color: #000;
+  cursor: pointer;
+  transition: all ease-in-out .2s;
+}
+
+header a:hover {
+  color: #faebd7;
+}
+
+/* Button Styles */
+
+.button-primary {
+  padding: 1rem 2rem;
+  background-color: #F4CE14;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: none;
+  border-radius: .5rem;
+  transition: all linear .1s;
+}
+
+.button-primary:hover {
+  background-color: #000;
+  color: #f4ce14;
+}
+
+/* Hero Section */
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+}
+
+.hero-text h2 {
+  margin: -1rem 0 1.5rem;
+  font-size: 2.2rem;
+  color: #faebd7;
+}
+
+.hero-text p {
+  margin-bottom: 2rem;
+}
+
+#hero img {
+  width: 47%;
+  border-radius: 1rem;
+}
+
+#hero button {
+  align-self: flex-start;
+}
+
+
+/* Menu/Specials Section */
+
+#menu {
+  flex-direction: column;
+}
+
+.menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.specials-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.specials-card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 450px;
+  margin: 3rem;
+  background-color: #82938d;
+  border-radius: 2rem;
+}
+
+.specials-card img {
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
+.specials-text {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  height: 100%;
+}
+
+.specials-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.specials-card .order-delivery {
+  display: flex;
+  justify-content: space-between;
+  width: 62%;
+  margin-top: auto;
+  font-size: 1.2rem;
+}
+
+/* Reviews Section */
+
+#reviews {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#reviews h1 {
+  margin-bottom: 4rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.review-cards {
+  display: flex;
+}
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 250px;
+  width: 250px;
+  background-color: rgba(40, 40, 40, 0.5);
+  padding: 1rem;
+  margin: 1rem;
+  color: #faebd7;
+  border-radius: 1rem;
+}
+
+.review-card > * {
+  margin-bottom: .4rem;
+}
+
+.review-header {
+  display: flex;
+}
+
+.review-header img {
+  height: 100px;
+  width: 100px;
+  margin-right: 1rem;
+}
+
+.review-stars {
+  display: flex;
+  align-items: center;
+}
+
+/* About Section */
+
+#about {
+  justify-content: space-around;
+  align-items: center;
+}
+
+.about-text {
+  width: 40%;
+}
+
+.about-text h2 {
+  margin: -1rem 0 1.5rem;
+  font-size: 2.2rem;
+  color: #faebd7;
+}
+
+.about-text p {
+  margin-bottom: 2rem;
+}
+
+.about-img {
+  height: calc(2572px / 4);
+  width: calc(1920px / 4);
+  background-color: #000;
+  background: linear-gradient(0deg,rgba(255, 221, 0, 0.4), rgba(255, 221, 0, 0.4)), url(/public/couple.jpg) no-repeat;
+  background-size: contain;
+  border-radius: 1rem;
+}
+
+
+/* Footer Section */
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+  margin-top: 5rem;
+  font-size: .9rem;
+}
+
+footer img {
+  height: 4rem;
+  cursor: pointer;
+}
+
+footer li {
+  margin-top: .2rem;
+}
+
+footer a {
+  color: #000;
+  cursor: pointer;
+  transition: all ease-in-out .2s;
+}
+
+footer a:hover {
+  color: #faebd7;
 }
