@@ -1,9 +1,9 @@
 import React from 'react'
+import AvailableTimes from './AvailableTimes'
+import { HashLink as Link } from 'react-router-hash-link';
 
 export default function BookingForm(props) {
-    
-
-  
+      
   function handleChange(event) {
       props.setFormData(prevFormData => {
           return {
@@ -12,24 +12,18 @@ export default function BookingForm(props) {
           }
       })
   }
-
-  function handleSubmit(event) {
-    event.preventDefault()
-    submitToApi(props.formData) // Function to submit data to API
-  }
   
-  function submitToApi() {
-    alert('Reseveration request has been submitted!')
-  }
+
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={props.handleSubmit}>
       <input
         type="text"
         placeholder="First Name"
         onChange={handleChange}
         name="firstName"
         value={props.formData.firstName}
+        required
       />
       <input
         type="text"
@@ -37,6 +31,7 @@ export default function BookingForm(props) {
         onChange={handleChange}
         name="lastName"
         value={props.formData.lastName}
+        required
       />
       <br />
       <input
@@ -45,6 +40,7 @@ export default function BookingForm(props) {
         onChange={handleChange}
         name="email"
         value={props.formData.email}
+        required
       />
       <br />
       <input
@@ -55,31 +51,23 @@ export default function BookingForm(props) {
         onChange={handleChange}
         name="guests"
         value={props.formData.guests}
+        required
       />
        <input
         type="date"
         onChange={handleChange}
         name="resDate"
         value={props.formData.resDate}
+        required
       />
-      <select 
-        id="resTime"
-        value={props.formData.resTime}
-        onChange={handleChange}
-        name="resTime"
-      >
-        <option value="">-- Choose Time --</option>
-        <option value="17:00">17:00</option>
-        <option value="17:30">17:30</option>
-        <option value="18:00">18:00</option>
-        <option value="18:30">18:30</option>
-        <option value="19:00">19:00</option>
-        <option value="19:30">19:30</option>
-        <option value="20:00">20:00</option>
-        <option value="20:30">20:30</option>
-        <option value="21:00">21:00</option>
-        <option value="21:30">21:30</option>
-      </select>
+     
+      <AvailableTimes 
+        formData={props.formData} 
+        handleChange={handleChange}
+        times={props.times}
+        setTimes={props.setTimes}
+      />
+
       <fieldset>
         <legend>Special Occasion</legend>
         <input 
@@ -89,6 +77,7 @@ export default function BookingForm(props) {
           value="none"
           checked={props.formData.occasion === "none"}
           onChange={handleChange}
+          required
         />
         <label htmlFor="none">None</label> 
         <input 
@@ -98,6 +87,7 @@ export default function BookingForm(props) {
           value="birthday"
           checked={props.formData.occasion === "birthday"}
           onChange={handleChange}
+          required
         />
         <label htmlFor="birthday">Birthday</label>  
         <input 
@@ -107,11 +97,13 @@ export default function BookingForm(props) {
           value="anniversary"
           checked={props.formData.occasion === "anniversary"}
           onChange={handleChange}
+          required
         />
         <label htmlFor="anniversary">Anniversary</label>  
       </fieldset>
 
-      <button>Submit</button>
+      <button aria-label="On Click">Submit</button>
+   
     </form>
   )
 }

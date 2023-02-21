@@ -11,6 +11,7 @@
 
 #root {
   min-height: 100vh;
+  min-width: 1225px;
   display: flex;
   flex-direction: column;
 }
@@ -159,7 +160,7 @@ header a:hover {
   flex-direction: column;
   width: 300px;
   height: 450px;
-  margin: 3rem;
+  margin: 3rem 1.5rem;
   background-color: #82938d;
   border-radius: 2rem;
 }
@@ -376,6 +377,24 @@ form button:hover,
 form button:hover
 {
 	background: #f4ce14;
+}
+
+/* Confirmation Page */
+
+.confirmation-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 50vh;
+}
+
+.confirmation-message h1 {
+  font-size: 4rem;
+}
+
+.confirmation-message h2 {
+  font-size: 2rem;
+  color: #F4CE14;
 }
 
 /* Footer Section */

@@ -6,7 +6,7 @@ export default function Specials() {
     <section id="menu">
       <div className="menu-header">
         <h1>Specials</h1>
-        <button className="button-primary">Online Menu</button>
+        <button className="button-primary" aria-label="On Click">Online Menu</button>
       </div>
       <div className="specials-cards">
         <article className="specials-card box-shadow">
